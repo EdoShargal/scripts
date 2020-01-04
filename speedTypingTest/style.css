@@ -53,3 +53,12 @@ body, .qoute-input{
 .quote-input:focus{
     border-color: black;  
 } 
+
+.success{
+    color: green;
+}
+
+.error{
+    color: red;
+    text-decoration: underline;
+}
