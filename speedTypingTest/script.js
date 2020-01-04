@@ -64,4 +64,16 @@ function getTimerTime() {
 getNextQoute()
 
 
+//import { Observable } from 'rxjs';
+const Rx = require('rx')
 
+// listen for data from the observables
+var resize = Rx.Observable.create((o) => {
+
+  // listen for window resize and pass height and width
+  window.addEventListener("resize", () => {
+    var height = window.innerHeight;
+    var width = window.innerWidth;
+    o.next({height, width});
+  });
+});
