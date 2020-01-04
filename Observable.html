@@ -1,0 +1,24 @@
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/5.4.0/Rx.js"></script>
+
+
+<script> var resize = new Rx.Observable((o) => {
+
+  // listen for window resize and pass height and width
+  window.addEventListener("resize", () => {
+    var height = window.innerHeight;
+    var width = window.innerWidth;
+    o.next({height, width});
+  });
+
+});
+
+var observer = {
+  next: (value) => {
+    console.log("VALUE:", value);
+  }
+};
+
+resize.subscribe(observer);
+
+</script>
